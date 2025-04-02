@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ---- reset ---- */
+        body { 
+            margin:0; 
+            font:normal 75% Arial, Helvetica, sans-serif; 
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        } 
+        canvas { 
+            display: block; 
+            vertical-align: bottom; 
+        } 
+        /* ---- particles.js container ---- */ 
+        #particles-js { 
+            position:absolute; 
+            width: 100%; 
+            height: 100%; 
+            background-color: #010a26; 
+            background-image: url(""); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: 50% 50%; 
+        } 
+        /* ---- content ---- */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8rem;
+            font-weight: bold;
+            animation: floatText 3s infinite ease-in-out alternate;
+        }
+        
+        @keyframes floatText {
+            0% { transform: translate(-50%, -50%) translateY(-10px); }
+            100% { transform: translate(-50%, -50%) translateY(10px); }
+        }
+        
+        /* ---- stats.js ---- */ 
+      
+        .js-count-particles {
+            font-size: 1.1em; 
+        } 
+        #stats, .count-particles{ 
+            -webkit-user-select: none; 
+            margin-top: 5px; 
+            margin-left: 5px; 
+        } 
+        #stats { 
+            border-radius: 3px 3px 0 0; 
+            overflow: hidden; 
+        } 
+        .count-particles { 
+            border-radius: 0 0 3px 3px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+    
+    <!-- Content -->
+    <div class="content">
+        Observatório de Estudos sobre a Proteção de Dados Pessoais na Internet
+    </div>
+    
+    <!-- Stats - Count Particles -->
+    <div class="count-particles"> 
+        <span class="js-count-particles">--</span> particles 
+    </div>
+
+    <!-- Particles.js lib -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 321, "density": { "enable": false, "value_area": 3859.79 } },
+                "color": { "value": "#04d9d9" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#5e19ae" },
+                    "polygon": { "nb_sides": 3 },
+                    "image": { "src": "", "width": 100, "height": 100 }
+                },
+                "opacity": {
+                    "value": 0.6,
+                    "random": false,
+                    "anim": { "enable": true, "speed": 6.88, "opacity_min": 0.8, "sync": false }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true,
+                    "anim": { "enable": false, "speed": 300, "size_min": 62.37, "sync": true }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 160,
+                    "color": "#021e73",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 11.2,
+                    "direction": "top-right",
+                    "random": true,
+                    "straight": true,
+                    "out_mode": "bounce",
+                    "bounce": false,
+                    "attract": { "enable": false, "rotateX": 600, "rotateY": 100 }
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": { "enable": false, "mode": "grab" },
+                    "onclick": { "enable": false, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 1500, "line_linked": { "opacity": 1 } },
+                    "bubble": { "distance": 1500, "size": 0, "duration": 10, "opacity": 1, "speed": 3 },
+                    "repulse": { "distance": 1000, "duration": 0.4 },
+                    "push": { "particles_nb": 4 },
+                    "remove": { "particles_nb": 2 }
+                }
+            },
+            "retina_detect": false
+        });
+    </script>
+</body>
+</html>
